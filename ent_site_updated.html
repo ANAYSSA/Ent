@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЕНТ - Темы по информатике</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background 0.3s ease;
+        }
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        main {
+            margin: 30px;
+        }
+        .subject-btn {
+            display: block;
+            width: 220px;
+            margin: 15px auto;
+            padding: 15px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .subject-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .topics {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .topics li {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px auto;
+            padding: 15px;
+            width: 85%;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: left;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        .topics li:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="page active">
+        <header>
+            <span>Выберите предмет</span>
+            <button class="lang-btn" onclick="toggleLanguage()">Русский / Қазақша</button>
+        </header>
+        <main>
+            <div class="subject-btn" onclick="showPage('informatics')">Информатика</div>
+        </main>
+    </div>
+
+    <div id="informatics" class="page">
+        <header>
+            <span>Информатика - Темы ЕНТ</span>
+            <nav>
+                <a onclick="showPage('home')">Главная</a>
+                <a href="#">Книги</a>
+                <a href="#">Системы счисления</a>
+                <a href="#">Калькулятор</a>
+                <a href="#">Логические задачи</a>
+                <button class="lang-btn" onclick="toggleLanguage()">Русский / Қазақша</button>
+            </nav>
+        </header>
+        <main>
+            <ul class="topics">
+                <li>Компьютерные науки</li>
+                <li>Компьютерные сети</li>
+                <li>Информационные измерения</li>
+                <li>Программное обеспечение</li>
+                <li>Электронная обработка данных</li>
+                <li>Абсолютные адреса</li>
+                <li>Электронные устройства</li>
+                <li>Системы счисления</li>
+                <li>Логические выражения</li>
+                <li>Логические решения</li>
+                <li>История вычислений</li>
+                <li>Unicode</li>
+                <li>Файловые системы</li>
+                <li>Антивирусные системы</li>
+                <li>Python – Интерпретатор</li>
+                <li>Python – Библиотеки</li>
+                <li>Python – Использование</li>
+                <li>Python – Основы</li>
+                <li>Цикл While</li>
+                <li>Цикл For</li>
+            </ul>
+        </main>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function toggleLanguage() {
+            alert("Переключение языка пока не реализовано, но скоро будет!");
+        }
+    </script>
+
+</body>
+</html>
